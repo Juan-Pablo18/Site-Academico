@@ -1,0 +1,456 @@
+.grades-page {
+  --grades-wine: var(--blue);
+  --grades-wine-dark: #5e0a19;
+  --grades-gold: #c48a13;
+  --grades-success: #2f8a42;
+  --grades-danger: #b81834;
+  display: grid;
+  gap: 18px;
+}
+
+.grades-hero {
+  min-height: 205px;
+  box-sizing: border-box;
+  padding: 32px clamp(26px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-radius: 5px;
+  color: #fff;
+  background:
+    linear-gradient(105deg, rgba(54, 3, 12, .98), rgba(132, 15, 37, .87)),
+    repeating-linear-gradient(135deg, transparent 0 20px, rgba(255,255,255,.03) 20px 22px);
+  box-shadow: 0 12px 28px rgba(75, 8, 20, .16);
+}
+
+.grades-hero > div:first-child > span {
+  display: block;
+  color: #e5c57e;
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.grades-hero h1 {
+  margin: 7px 0 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.35rem, 5vw, 3.55rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.grades-hero p {
+  margin: 12px 0 0;
+  color: rgba(255,255,255,.9);
+  font-size: .72rem;
+}
+
+.grades-progress-card.MuiCard-root {
+  min-width: 225px;
+  padding: 17px 20px;
+  color: #30161a;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(34, 3, 9, .2);
+}
+
+.grades-progress-card strong,
+.grades-progress-card span { display: block; }
+.grades-progress-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .9rem;
+}
+.grades-progress-card span { margin-top: 5px; color: #786e6d; font-size: .58rem; }
+
+.grades-tabs { display: flex; gap: 9px; }
+.grades-tabs .MuiButton-root {
+  min-height: 38px;
+  padding: 0 19px;
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  color: var(--text);
+  background: var(--surface);
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: none;
+  box-shadow: 0 3px 8px rgba(44, 22, 25, .04);
+}
+.grades-tabs .MuiButton-root.active {
+  color: #fff;
+  border-color: var(--grades-wine);
+  background: var(--grades-wine);
+}
+
+.grades-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.grades-summary .MuiCard-root {
+  min-height: 78px;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  border-color: var(--line);
+  border-left: 3px solid var(--grades-wine);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 5px 15px rgba(54, 30, 33, .05);
+}
+.grades-summary strong,
+.grades-summary span { display: block; }
+.grades-summary strong {
+  color: var(--grades-wine);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+.grades-summary span { margin-top: 3px; color: var(--muted); font-size: .56rem; }
+
+.grades-table-card.MuiCard-root {
+  overflow: hidden;
+  border-color: var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  box-shadow: 0 7px 18px rgba(52, 25, 28, .05);
+}
+.grades-table-title {
+  min-height: 55px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.grades-table-title > div { width: 3px; height: 20px; background: var(--grades-wine); }
+.grades-table-title h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .9rem;
+}
+
+.grades-data-table.MuiTable-root { min-width: 790px; }
+.grades-data-table .MuiTableCell-root {
+  padding: 11px 16px;
+  border-color: var(--line);
+  color: var(--text);
+  font-size: .65rem;
+}
+.grades-data-table .MuiTableHead-root .MuiTableCell-root {
+  padding-block: 9px;
+  color: var(--muted);
+  font-size: .53rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.grades-data-table.grades .MuiTableCell-root:nth-child(1) { width: 31%; }
+.grades-data-table.grades .MuiTableCell-root:nth-child(2) { width: 22%; }
+.grades-data-table.attendance { min-width: 880px; }
+.grades-data-table.attendance .MuiTableCell-root:nth-child(1) { width: 29%; }
+.grades-data-table.attendance .MuiTableCell-root:nth-child(2) { width: 21%; }
+
+.grades-subject-identity,
+.grades-teacher-identity { display: flex; align-items: center; gap: 10px; }
+.grades-subject-code {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--grades-wine);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .68rem;
+  font-weight: 700;
+}
+.grades-subject-identity strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .72rem;
+}
+.grades-teacher-identity .MuiAvatar-root {
+  width: 25px;
+  height: 25px;
+  color: var(--grades-wine);
+  background: #f0e7e5;
+  font-size: .5rem;
+  font-weight: 800;
+}
+.grades-teacher-identity span { color: var(--muted); white-space: nowrap; }
+.grades-score-cell strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+.grades-score-cell span {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: #8a5b00;
+  background: #fff0bd;
+  font-size: .48rem;
+  font-weight: 800;
+}
+.grades-status.MuiChip-root {
+  height: 20px;
+  border-radius: 10px;
+  font-size: .49rem;
+  font-weight: 800;
+}
+.grades-status.success { color: #226d34; background: #e3f3e5; }
+.grades-status.warning { color: #8a5b00; background: #fff0c9; }
+.grades-status.danger { color: #9d1830; background: #fae2e6; }
+.grades-data-table .MuiButton-contained {
+  min-height: 31px;
+  padding-inline: 12px;
+  border-radius: 5px;
+  background: var(--grades-wine);
+  box-shadow: none;
+  font-size: .54rem;
+  font-weight: 800;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.grades-data-table .MuiButton-contained:hover { background: var(--grades-wine-dark); }
+.grades-data-table .MuiButton-endIcon { margin-left: 4px; }
+.grades-data-table .MuiButton-endIcon svg { font-size: .8rem; }
+
+.grades-progress-ring {
+  --ring-color: var(--grades-success);
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-color) var(--ring-progress), #eadfdd 0);
+}
+.grades-progress-ring::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+.grades-progress-ring strong {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .58rem;
+}
+.grades-progress-ring.warning { --ring-color: var(--grades-gold); }
+.grades-progress-ring.danger { --ring-color: var(--grades-danger); }
+.grades-progress-ring.success { --ring-color: var(--grades-success); }
+
+.grades-table-footer {
+  min-height: 43px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  background: var(--surface-2);
+  font-size: .54rem;
+}
+
+.grades-details-drawer.MuiDrawer-paper {
+  width: 420px;
+  color: #24191b;
+  background: #fff;
+}
+.grades-details-panel { min-height: 100%; background: #fff; }
+.grades-details-hero {
+  position: relative;
+  min-height: 174px;
+  box-sizing: border-box;
+  padding: 20px 20px 54px;
+  color: #fff;
+  background: linear-gradient(135deg, #741025, #a51c3a);
+}
+.grades-details-hero > .MuiIconButton-root {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+  background: rgba(255,255,255,.13);
+}
+.grades-details-kicker.MuiTypography-root {
+  display: block;
+  color: #f0d489;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.grades-details-title {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.grades-details-title > div {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #7b1228;
+  background: #f6dda0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+}
+.grades-details-title h2 {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+.grades-details-teacher {
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.grades-details-teacher .MuiAvatar-root {
+  width: 27px;
+  height: 27px;
+  color: #7b1228;
+  background: #f7e3b2;
+  font-size: .5rem;
+  font-weight: 800;
+}
+.grades-details-teacher span { font-size: .6rem; font-weight: 700; }
+
+.grades-details-body { padding: 0 18px 24px; }
+.grades-overview-card.MuiCard-root {
+  position: relative;
+  z-index: 1;
+  min-height: 102px;
+  box-sizing: border-box;
+  margin-top: -42px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(52, 19, 25, .16);
+}
+.grades-overview-card .grades-progress-ring { width: 66px; height: 66px; }
+.grades-overview-card .grades-progress-ring::after { inset: 7px; background: #fff; }
+.grades-overview-card .grades-progress-ring strong { font-size: 1.05rem; }
+.grades-overview-card > div:last-child > strong,
+.grades-overview-card > div:last-child > span { display: block; }
+.grades-overview-card > div:last-child > strong { margin-top: 7px; font-size: .63rem; }
+.grades-overview-card > div:last-child > span { margin-top: 3px; color: #817677; font-size: .52rem; }
+
+.grades-failed-alert {
+  margin-top: 12px;
+  padding: 11px 13px;
+  border-left: 3px solid var(--grades-danger);
+  border-radius: 5px;
+  color: #8d152b;
+  background: #fae5e8;
+}
+.grades-failed-alert strong { font-size: .6rem; }
+.grades-detail-section { margin-top: 18px; }
+.grades-detail-section > h3 {
+  margin: 0 0 10px;
+  padding-left: 8px;
+  border-left: 3px solid var(--grades-wine);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .82rem;
+}
+.assessment-list { display: grid; gap: 9px; }
+.assessment-card.MuiCard-root,
+.attendance-card.MuiCard-root {
+  min-height: 72px;
+  padding: 10px 11px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  border-radius: 7px;
+  background: #fff;
+}
+.assessment-card.passing,
+.attendance-card.passing { border-color: #67aa71; background: #edf8ee; }
+.assessment-card.below,
+.attendance-card.below { border-color: #efd4d8; }
+.assessment-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--grades-danger);
+}
+.passing .assessment-icon { background: var(--grades-success); }
+.assessment-icon svg { font-size: 1rem; }
+.assessment-copy strong,
+.assessment-copy span { display: block; }
+.assessment-copy strong { font-size: .66rem; }
+.assessment-copy span { margin-top: 2px; color: #837879; font-size: .52rem; }
+.assessment-value {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 1rem !important;
+}
+.assessment-track {
+  position: relative;
+  grid-column: 1 / -1;
+  height: 7px;
+  overflow: visible;
+  border-radius: 4px;
+  background: #eee2e4;
+}
+.assessment-fill {
+  width: var(--bar-progress);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--grades-danger);
+}
+.passing .assessment-fill { background: var(--grades-success); }
+.assessment-marker {
+  position: absolute;
+  left: 60%;
+  top: -3px;
+  width: 1px;
+  height: 13px;
+  background: #8f8686;
+}
+.assessment-track.attendance .assessment-marker { left: 75%; }
+.grades-panel-message {
+  margin: 18px 0 0 !important;
+  padding-top: 16px;
+  border-top: 1px dashed #ded4d2;
+  text-align: center;
+  font-size: .57rem !important;
+  line-height: 1.55 !important;
+}
+.grades-panel-message.success { color: #247438; }
+.grades-panel-message.warning { color: #7e5708; }
+.grades-panel-message.danger { color: #9b1830; }
+
+@media (max-width: 700px) {
+  .grades-hero {
+    min-height: 285px;
+    padding: 27px 22px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .grades-hero h1 { font-size: 2.45rem; }
+  .grades-progress-card.MuiCard-root { min-width: 0; width: 100%; box-sizing: border-box; }
+  .grades-tabs { overflow-x: auto; }
+  .grades-tabs .MuiButton-root { min-width: max-content; }
+  .grades-summary { grid-template-columns: 1fr; gap: 9px; }
+  .grades-summary .MuiCard-root { min-height: 66px; }
+  .grades-table-footer { align-items: flex-start; flex-direction: column; gap: 5px; padding-block: 11px; }
+  .grades-details-drawer.MuiDrawer-paper { width: 100%; }
+}
